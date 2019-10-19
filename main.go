@@ -6,14 +6,10 @@ import (
 	"sort"
 )
 
-func main() {
-	var word string
+func SortWord(word string) string{
 	var vowels []string
 	var consonants []string
 	var print []string
-
-	fmt.Print("Masukkan Kata: ")
-	fmt.Scanln(&word)
 
 	words := strings.Split(word, "")
 
@@ -32,5 +28,14 @@ func main() {
 	print = append(vowels, consonants...)
 	result := strings.Join(print, "")
 
-	fmt.Printf("Hasil: %s", result)
+	return result
+}
+
+func main() {
+	var word string
+
+	fmt.Print("Masukkan Kata: ")
+	fmt.Scanln(&word)
+
+	fmt.Printf("Hasil: %s", SortWord(word))
 }
